@@ -23,7 +23,7 @@ class UserController extends BaseController
             $data = $this->userService->getUsers();
             return $this->sendResponse('Retrieved users successfully', $data);
         } catch (\Exception $e) {
-            return $this->sendError('Retrieved users failed.', $e->getMessage, 500);
+            return $this->sendError('Retrieved users failed.', $e->getMessage(), 500);
         }
     }
 
@@ -47,7 +47,7 @@ class UserController extends BaseController
             $data = $this->userService->getUser($id);
             return $this->sendResponse('Retrieved user successfully', $data);
         } catch (\Exception $e) {
-            return $this->sendError('Retrieved user failed.', $e->getMessage, 500);
+            return $this->sendError('Retrieved user failed.', $e->getMessage(), 500);
         }
     }
 
@@ -82,7 +82,7 @@ class UserController extends BaseController
             $data = $this->userService->updateUser($input);
             return $this->sendResponse('Updated user successfully', $data);
         } catch (\Exception $e) {
-            return $this->sendError('Updated user failed.', $e->getMessage, 500);
+            return $this->sendError('Updated user failed.', $e->getMessage(), 500);
         }
     }
 
@@ -106,7 +106,7 @@ class UserController extends BaseController
             $data = $this->userService->deleteUser($id);
             return $this->sendResponse('Deleted user successfully');
         } catch (\Exception $e) {
-            return $this->sendError('Deleted user failed.', $e->getMessage, 500);
+            return $this->sendError('Deleted user failed.', $e->getMessage(), 500);
         }
     }
 }

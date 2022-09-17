@@ -36,4 +36,39 @@ class ValidationHelper
             'name' => 'required|string'
         ];
     }
+
+    public static function getCreateProjectRules()
+    {
+        return [
+            'name' => 'required|string'
+        ];
+    }
+
+    public static function getUpdateProjectRules()
+    {
+        return [
+            'id' => 'required|exists:projects,id',
+            'name' => 'required|string'
+        ];
+    }
+
+    public static function getCreateTaskRules()
+    {
+        return [
+            'title' => 'required|string',
+            'description' => 'nullable|string',
+            'project_id' => 'required|exists:projects,id',
+            'user_id' => 'required|exists:users,id'
+        ];
+    }
+
+    public static function getUpdateTaskRules()
+    {
+        return [
+            'id' => 'required|exists:tasks,id',
+            'title' => 'nullable|string',
+            'description' => 'nullable|string',
+            'status' => 'nullable|string'
+        ];
+    }
 }

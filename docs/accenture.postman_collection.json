@@ -1,0 +1,956 @@
+{
+	"info": {
+		"_postman_id": "f3877bb4-2f77-4074-b679-05f59296e1b6",
+		"name": "Accenture",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Login (Admin)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@test.my\",\n    \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login (Product Owner)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"owner@test.my\",\n    \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"protocolProfileBehavior": {
+						"followRedirects": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "POST, GET, OPTIONS, PUT, DELETE",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One User",
+					"protocolProfileBehavior": {
+						"followRedirects": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "POST, GET, OPTIONS, PUT, DELETE",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/users/1442a16a-1643-4766-bed0-9d18890a45ea",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"1442a16a-1643-4766-bed0-9d18890a45ea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|IasmS0d0sLZOayoKUsN7w44RRpUFKyIwQnUSQHhW",
+								"type": "default"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test7@test.my\",\n    \"name\": \"test7\",\n    \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"protocolProfileBehavior": {
+						"followRedirects": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "POST, GET, OPTIONS, PUT, DELETE",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test71@test.my\",\n    \"name\": \"test71\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/users/6ca112ec-dbed-45b7-924c-aee13eaad91f",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"6ca112ec-dbed-45b7-924c-aee13eaad91f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch User",
+					"protocolProfileBehavior": {
+						"followRedirects": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "POST, GET, OPTIONS, PUT, DELETE",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test7@test.my\",\n    \"name\": \"test7\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/users/6ca112ec-dbed-45b7-924c-aee13eaad91f",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"6ca112ec-dbed-45b7-924c-aee13eaad91f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"protocolProfileBehavior": {
+						"followRedirects": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "POST, GET, OPTIONS, PUT, DELETE",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/users/6ca112ec-dbed-45b7-924c-aee13eaad91f",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"6ca112ec-dbed-45b7-924c-aee13eaad91f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "Get All Projects",
+					"protocolProfileBehavior": {
+						"followRedirects": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "POST, GET, OPTIONS, PUT, DELETE",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/projects?q=Dr&sortBy=name&sortDirection=ASC&pageIndex=0",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Dr"
+								},
+								{
+									"key": "sortBy",
+									"value": "name"
+								},
+								{
+									"key": "sortDirection",
+									"value": "ASC"
+								},
+								{
+									"key": "pageIndex",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One User",
+					"protocolProfileBehavior": {
+						"followRedirects": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "POST, GET, OPTIONS, PUT, DELETE",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/projects/7996dd8a-e1f9-402f-a790-0fcef09f1c1b",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"7996dd8a-e1f9-402f-a790-0fcef09f1c1b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Project",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"project3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/projects",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Project",
+					"protocolProfileBehavior": {
+						"followRedirects": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "POST, GET, OPTIONS, PUT, DELETE",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"projectz\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/projects/c636f787-72df-4e03-b1d1-93bb80ea4658",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"c636f787-72df-4e03-b1d1-93bb80ea4658"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch User",
+					"protocolProfileBehavior": {
+						"followRedirects": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "POST, GET, OPTIONS, PUT, DELETE",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"projectssss\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/projects/be4cf12b-ab15-4afd-be13-353fc8da0654",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"be4cf12b-ab15-4afd-be13-353fc8da0654"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"protocolProfileBehavior": {
+						"followRedirects": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "POST, GET, OPTIONS, PUT, DELETE",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/projects/be4cf12b-ab15-4afd-be13-353fc8da0654",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"be4cf12b-ab15-4afd-be13-353fc8da0654"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "Get All Tasks",
+					"protocolProfileBehavior": {
+						"followRedirects": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "POST, GET, OPTIONS, PUT, DELETE",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/tasks",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One Task",
+					"protocolProfileBehavior": {
+						"followRedirects": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "POST, GET, OPTIONS, PUT, DELETE",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/tasks/6090beaa-9131-43e0-a64b-2e50a887d5e3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"6090beaa-9131-43e0-a64b-2e50a887d5e3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"6090beaa-9131-43e0-a64b-2e50a887d5e3\",\n    \"user_id\": \"24d5f136-ce0f-4fd3-bb46-c0830b72af7d\",\n    \"project_id\": \"16cdb5b8-4e19-4bd5-a862-f627c6cd4283\",\n    \"title\": \"title1\",\n    \"description\": \"description1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/tasks",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Task",
+					"protocolProfileBehavior": {
+						"followRedirects": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "POST, GET, OPTIONS, PUT, DELETE",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"title2\",\n    \"description\": \"description2\",\n    \"status\": \"NOT_STARTED\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/tasks/b687be36-e80d-453f-b09c-5338f96e0a39",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"b687be36-e80d-453f-b09c-5338f96e0a39"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch Task",
+					"protocolProfileBehavior": {
+						"followRedirects": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "POST, GET, OPTIONS, PUT, DELETE",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"title3\",\n    \"description\": \"description3\",\n    \"status\": \"NOT_STARTED\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/tasks/b687be36-e80d-453f-b09c-5338f96e0a39",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"b687be36-e80d-453f-b09c-5338f96e0a39"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Task",
+					"protocolProfileBehavior": {
+						"followRedirects": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "POST, GET, OPTIONS, PUT, DELETE",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/tasks/b687be36-e80d-453f-b09c-5338f96e0a39",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"b687be36-e80d-453f-b09c-5338f96e0a39"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
