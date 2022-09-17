@@ -21,10 +21,11 @@ class ProjectController extends BaseController
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         try {
-            $data = $this->projectService->getProjects();
+            $query = $request->query();
+            $data = $this->projectService->getProjects($query);
             return $this->sendResponse('Retrieved projects successfully', $data);
         } catch (\Exception $e) {
             return $this->sendError('Retrieved projects failed.', $e->getMessage(), 500);

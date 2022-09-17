@@ -12,10 +12,25 @@ use App\Models\Project;
 
 class ProjectServices
 {
-    public function getProjects()
+    public function getProjects($queryParam)
     {
         try {
-            $projects = Project::all();
+            $keyword = !empty($queryParam['q']) ? $queryParam['q'] : null;
+            $sortBy = !empty($queryParam['sortBy']) ? $queryParam['sortBy'] : 'name';
+            $sortDirection = !empty($queryParam['sortDirection']) ? $queryParam['sortDirection'] : 'desc';
+            $pageIndex = !empty($queryParam['pageIndex']) ? $queryParam['pageIndex'] : 0;
+            $pageSize = !empty($queryParam['pageSize']) ? $queryParam['pageSize'] : 3;      
+
+            $projects = Project::where(
+                    function ($query) use ($keyword) {
+                        if (!empty($keyword)) {
+                            return $query->orWhere('name', 'like', '%' . $keyword . '%');
+                        }
+                    }
+                )
+                ->orderBy($sortBy, $sortDirection)
+                ->paginate($pageSize, ['*'], $pageIndex);
+
             return $projects;
         } catch (\Exception $e) {
             Log::error('(Error) Retrieve projects failed. Error: ' . PHP_EOL . $e->getMessage());
