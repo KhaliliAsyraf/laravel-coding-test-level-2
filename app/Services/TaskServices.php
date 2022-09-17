@@ -10,6 +10,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Arr;
 use App\Models\Project;
 use App\Models\Task;
+use App\Models\User;
 
 class TaskServices
 {
@@ -43,6 +44,9 @@ class TaskServices
             $data = Arr::only($input, app(Task::class)->getFillable());
             $task = Task::create($data);
 
+            $member = User::find($input['user_id']);
+            $member->assignRole(config('staticdata.roles.member'));
+
             DB::commit();
             return $task;
         } catch (\Exception $e) {
@@ -58,8 +62,13 @@ class TaskServices
             DB::beginTransaction();
 
             $task = Task::find($input['id']);
+
+            if (auth()->user()->id != $task->user_id) {
+                throw new \Exception('User ID: ' . auth()->user()->id . '. Unable to update status that not belong to them');
+            }
+
             $task->update(
-                Arr::only($input, app(Task::class)->getFillable())
+                Arr::only($input, ['status', 'title', 'description'])
             );
 
             DB::commit();

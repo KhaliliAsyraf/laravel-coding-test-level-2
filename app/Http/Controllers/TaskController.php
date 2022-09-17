@@ -28,7 +28,7 @@ class TaskController extends BaseController
             $data = $this->taskService->getTasks();
             return $this->sendResponse('Retrieved tasks successfully', $data);
         } catch (\Exception $e) {
-            return $this->sendError('Retrieved tasks failed.', $e->getMessage, 500);
+            return $this->sendError('Retrieved tasks failed.', $e->getMessage(), 500);
         }
     }
 
@@ -49,9 +49,9 @@ class TaskController extends BaseController
             }
 
             $data = $this->taskService->createTask($input);
-            return $this->sendResponse('Created project successfully', $data);
+            return $this->sendResponse('Created task successfully', $data);
         } catch (\Exception $e) {
-            return $this->sendError('Create project failed', $e->getMessage());
+            return $this->sendError('Create task failed', $e->getMessage());
         }
     }
 
@@ -81,7 +81,7 @@ class TaskController extends BaseController
             $data = $this->taskService->getTask($id);
             return $this->sendResponse('Retrieved task successfully', $data);
         } catch (\Exception $e) {
-            return $this->sendError('Retrieved task failed.', $e->getMessage, 500);
+            return $this->sendError('Retrieved task failed.', $e->getMessage(), 500);
         }
     }
 
@@ -117,7 +117,7 @@ class TaskController extends BaseController
             $data = $this->taskService->updateTask($input);
             return $this->sendResponse('Updated task successfully', $data);
         } catch (\Exception $e) {
-            return $this->sendError('Updated task failed.', $e->getMessage, 500);
+            return $this->sendError('Updated task failed.', $e->getMessage(), 500);
         }
     }
 
@@ -147,7 +147,7 @@ class TaskController extends BaseController
             $data = $this->taskService->deleteTask($id);
             return $this->sendResponse('Deleted task successfully');
         } catch (\Exception $e) {
-            return $this->sendError('Deleted task failed.', $e->getMessage, 500);
+            return $this->sendError('Deleted task failed.', $e->getMessage(), 500);
         }
     }
 }

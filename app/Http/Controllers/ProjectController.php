@@ -27,7 +27,7 @@ class ProjectController extends BaseController
             $data = $this->projectService->getProjects();
             return $this->sendResponse('Retrieved projects successfully', $data);
         } catch (\Exception $e) {
-            return $this->sendError('Retrieved projects failed.', $e->getMessage, 500);
+            return $this->sendError('Retrieved projects failed.', $e->getMessage(), 500);
         }
     }
 
@@ -80,7 +80,7 @@ class ProjectController extends BaseController
             $data = $this->projectService->getProject($id);
             return $this->sendResponse('Retrieved project successfully', $data);
         } catch (\Exception $e) {
-            return $this->sendError('Retrieved project failed.', $e->getMessage, 500);
+            return $this->sendError('Retrieved project failed.', $e->getMessage(), 500);
         }
     }
 
@@ -116,7 +116,7 @@ class ProjectController extends BaseController
             $data = $this->projectService->updateProject($input);
             return $this->sendResponse('Updated project successfully', $data);
         } catch (\Exception $e) {
-            return $this->sendError('Updated project failed.', $e->getMessage, 500);
+            return $this->sendError('Updated project failed.', $e->getMessage(), 500);
         }
     }
 
@@ -146,7 +146,7 @@ class ProjectController extends BaseController
             $data = $this->projectService->deleteProject($id);
             return $this->sendResponse('Deleted project successfully');
         } catch (\Exception $e) {
-            return $this->sendError('Deleted project failed.', $e->getMessage, 500);
+            return $this->sendError('Deleted project failed.', $e->getMessage(), 500);
         }
     }
 }

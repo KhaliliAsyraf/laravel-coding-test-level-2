@@ -108,7 +108,8 @@ class PermissionsTableSeeder extends Seeder
                     'display_name' => 'Update Task',
                     'role_access' => [
                         'ADMIN',
-                        'PRODUCT_OWNER'
+                        'PRODUCT_OWNER',
+                        'MEMBER'
                     ]
                 ],
                 'view-tasks' => [

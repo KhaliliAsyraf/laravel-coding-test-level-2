@@ -66,11 +66,9 @@ class ValidationHelper
     {
         return [
             'id' => 'required|exists:tasks,id',
-            'title' => 'required|string',
+            'title' => 'nullable|string',
             'description' => 'nullable|string',
-            'status' => 'required|string',
-            'project_id' => 'required|exists:projects,id',
-            'user_id' => 'required|exists:users,id'
+            'status' => 'nullable|string'
         ];
     }
 }
